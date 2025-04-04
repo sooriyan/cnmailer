@@ -4,10 +4,13 @@ import { useState } from "react";
 export default function EmailSender() {
   const [email, setEmail] = useState("");
   const [consignment, setConsignment] = useState("");
-  const [trackingUrl, setTrackingUrl] = useState("");
+  const [trackingUrl, setTrackingUrl] = useState(
+    "https://www.dtdc.in/trace.asp"
+  );
   const [message, setMessage] = useState("");
 
   const sendEmail = async (type: "confirmation" | "dispatch") => {
+    setMessage("");
     const payload: {
       type: "confirmation" | "dispatch";
       email: string;
