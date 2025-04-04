@@ -166,6 +166,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: process.env.MAIL_FROM,
       to: email,
+      bcc: "closetnotion@gmail.com",
       subject,
       html,
     });
